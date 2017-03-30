@@ -1,0 +1,40 @@
+{
+    "name": "php-solution/notification-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony bundle for using notification component with user notify functionality",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oleksandr Savchenko",
+            "email": "dev.olsav@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "php-solution/notification": "dev-master",
+        "symfony/event-dispatcher": ">=3.1",
+        "symfony/options-resolver": ">=3.1",
+        "symfony/dependency-injection": ">=3.1",
+        "symfony/http-kernel": ">=3.1",
+        "symfony/config": ">=3.1"
+    },
+    "require-dev": {
+        "symfony/swiftmailer-bundle": ">=2.0"
+    },
+    "suggest": {
+        "symfony/swiftmailer-bundle": "for use SwiftMailer as Notifier"
+    },
+    "autoload":     {
+        "psr-4": { "PhpSolution\\NotificationBundle\\": "src/" }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x-dev"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}

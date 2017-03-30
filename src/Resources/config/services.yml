@@ -1,0 +1,28 @@
+services:
+    notification.manager:
+        class: 'PhpSolution\Notification\NotificationManager'
+        arguments: ["@notification.type_registry", "@notification.notifier_registry", ~]
+
+    notification.type_registry:
+        public: false
+        class: 'PhpSolution\Notification\Type\TypeRegistry'
+
+    notification.notifier_registry:
+        public: false
+        class: 'PhpSolution\Notification\Notifier\NotifierRegistry'
+
+    notification.extension.event_dispatcher:
+        public: false
+        class: 'PhpSolution\Notification\Extension\EventDispatcher\Extension'
+        arguments: ["@event_dispatcher"]
+
+    notification.extension.context_configurator:
+        public: false
+        class: 'PhpSolution\Notification\Extension\ContextConfigure\Extension'
+
+    notification.notifier.swift_mailer:
+        public: false
+        class: 'PhpSolution\NotificationBundle\Notifier\SwiftMailer\Notifier'
+        arguments: [~, ~]
+        tags:
+            - { name: 'notification.notifier'}
